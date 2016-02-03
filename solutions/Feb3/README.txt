@@ -1,2 +1,2 @@
 Problems can be found at:
-http://codeforces.com/group/zsofloKg9G/contest/100247/problems
+http://codeforces.com/gym/100247/problems
