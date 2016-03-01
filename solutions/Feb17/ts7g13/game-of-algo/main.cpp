@@ -3,9 +3,8 @@
 #define INF (1 << 30)
 using namespace std;
 
-int n;
+int n, maxv = 0, minv = INF;
 int A[N];
-int maxv = 0, minv = INF;
 
 long long getPotentialRefs(int v) {
      long long sum = 0;
@@ -16,8 +15,7 @@ long long getPotentialRefs(int v) {
 }
 
 int bs(int l, int r) {
-     int left = l;
-     int right = r;
+     int left = l, right = r;
      int mid, result;
      long long sum;
      while (left <= right) {
@@ -38,13 +36,10 @@ int main() {
      cin >> n;
      for (int i=0; i<n; ++i) {
           cin >> A[i];
-          if (A[i] > maxv) {
-               maxv = A[i];
-          }
-          if (A[i] < minv) {
-               minv = A[i];
-          }
+          maxv = max(maxv, A[i]);
+          minv = min(minv, A[i]);
      }
-     cout << bs(maxv, maxv + minv) << "\n";
+     cout << bs(maxv, maxv + minv);;
      return 0;
 }
+
